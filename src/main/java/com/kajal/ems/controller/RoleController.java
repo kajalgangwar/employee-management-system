@@ -1,6 +1,7 @@
 package com.kajal.ems.controller;
 
-import com.kajal.ems.entity.Role;
+import com.kajal.ems.dto.request.RoleRequest;
+import com.kajal.ems.dto.response.RoleResponse;
 import com.kajal.ems.service.RoleService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +18,12 @@ public class RoleController {
     }
 
     @PostMapping
-    public Role saveRole(@RequestBody Role role) {
-        return roleService.saveRole(role);
+    public RoleResponse saveRole(@RequestBody RoleRequest request) {
+        return roleService.saveRole(request);
     }
 
     @GetMapping
-    public List<Role> getAllRoles() {
+    public List<RoleResponse> getAllRoles() {
         return roleService.getAllRoles();
     }
 }

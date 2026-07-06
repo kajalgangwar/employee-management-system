@@ -1,13 +1,13 @@
 package com.kajal.ems.service;
 
-import com.kajal.ems.entity.Role;
+import com.kajal.ems.dto.request.RoleRequest;
+import com.kajal.ems.dto.response.RoleResponse;
 
 import java.util.List;
 
 public interface RoleService {
 
-    Role saveRole(Role role);
+    RoleResponse saveRole(RoleRequest request);
 
-    List<Role> getAllRoles();
-
+    List<RoleResponse> getAllRoles();
 }
