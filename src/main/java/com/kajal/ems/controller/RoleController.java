@@ -3,6 +3,7 @@ package com.kajal.ems.controller;
 import com.kajal.ems.dto.request.RoleRequest;
 import com.kajal.ems.dto.response.RoleResponse;
 import com.kajal.ems.service.RoleService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class RoleController {
     }
 
     @PostMapping
-    public RoleResponse saveRole(@RequestBody RoleRequest request) {
+    public RoleResponse saveRole(@Valid @RequestBody RoleRequest request) {
         return roleService.saveRole(request);
     }
 
